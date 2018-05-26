@@ -1,0 +1,70 @@
+<div class="container-fluid">
+  <div class="page-header head">
+    <h1>Create Search Filters <small> A Recruitment Portal Tool</small></h1>
+  </div>
+  <form style="width: 63%; margin: 0 auto;">
+    <div class="form-group row">
+      <div class="col-3">
+        <label for="exampleInputEmail1">Keywords*</label>
+      </div>
+      <div class="col-7">
+        <!-- <input name="keywords" [(ngModel)]="filterForm.keyWords" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter keywords"> -->
+        <input type="text" [matAutocomplete]="auto" matInput placeholder="Enter keywords" name="keywords" [(ngModel)]="filterForm.keyWords" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        
+        <small id="emailHelp" class="form-text text-muted">Example skills: javascript, angular, react etc.. </small>
+      </div>
+    </div>
+    <div class="form-group row">
+      <div class="col-3">
+        <label for="exampleInputPassword1">Sources*</label>
+      </div>
+      <div class="col-7">
+        <!-- <input name="sources" [(ngModel)]="filterForm.sources" type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter the SOURCEs from where you would like to search"> -->
+        <input type="text" [matAutocomplete]="auto2" matInput placeholder="Enter the SOURCEs from where you would like to search" name="sources" [(ngModel)]="filterForm.sources" type="text" class="form-control" id="exampleInputSources1" aria-describedby="sourcesHelp">
+        
+        <small id="sourcesHelp" class="form-text text-muted">Ex: naukri, monster etc..</small>
+      </div>
+    </div>
+    <div class="form-group row">
+      <div class="col-3">
+        <label for="exampleInputPassword1">Cities*</label>
+      </div>
+      <div class="col-7">
+        <!-- <input name="cities" [(ngModel)]="filterForm.cities" type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter the CITIES from where you would like to search"> -->
+        <input type="text" [matAutocomplete]="auto3" matInput placeholder="Enter the CITIES from where you would like to search" name="cities" [(ngModel)]="filterForm.cities" type="text" class="form-control" id="exampleInputCities1" aria-describedby="citiesHelp">
+        
+        <small id="citiesHelp" class="form-text text-muted">Ex: Delhi, Mumbai</small>
+      </div>
+    </div>
+    <div class="form-check" style="padding-top: 15px;">
+      <label class="form-check-label">
+        <input type="checkbox" [(ngModel)]="filterForm.favourite" name='favs' class="form-check-input">
+        Bookmark as favourite
+      </label>
+    </div>
+    <button (click)="createFilter()" style="width: 250px;" type="submit" class="btn btn-primary">Create Filter</button>
+  </form>
+</div>
+
+
+<!-- <mat-form-field>
+  <input type="text" matInput [formControl]="myControl">
+</mat-form-field> -->
+
+<mat-autocomplete #auto="matAutocomplete">
+          <mat-option *ngFor="let option of keywordOptions" [value]="option">
+            {{ option }}
+          </mat-option>
+        </mat-autocomplete>
+
+<mat-autocomplete #auto2="matAutocomplete">
+          <mat-option *ngFor="let option of keywordOptions2" [value]="option">
+            {{ option }}
+          </mat-option>
+        </mat-autocomplete>
+
+<mat-autocomplete #auto3="matAutocomplete">
+          <mat-option *ngFor="let option of keywordOptions3" [value]="option">
+            {{ option }}
+          </mat-option>
+        </mat-autocomplete>

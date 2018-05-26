@@ -1,0 +1,39 @@
+<div class="container-fluid">
+  <div class="page-header head">
+    <h1>Search Filters Details<small> A Recruitment Portal Tool</small></h1>
+  </div>
+  <form style="width: 63%; margin: 0 auto;">
+    <div class="form-group row">
+      <div class="col-3">
+        <label for="exampleInputEmail1">Keywords*</label>
+      </div>
+      <div class="col-7">
+        <input name="keywords" disabled='true' [(ngModel)]="filterForm.keyWords" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter keywords">
+        <small id="emailHelp" class="form-text text-muted">Enter the KEYWORDs you want to search.</small>
+      </div>
+    </div>
+    <div class="form-group row">
+      <div class="col-3">
+        <label for="exampleInputPassword1">Sources*</label>
+      </div>
+      <div class="col-7">
+        <input name="sources" disabled='true' [(ngModel)]="filterForm.sources" type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter the SOURCEs from where you would like to search">
+      </div>
+    </div>
+    <div class="form-group row">
+      <div class="col-3">
+        <label for="exampleInputPassword1">Cities*</label>
+      </div>
+      <div class="col-7">
+        <input name="cities" disabled='true' [(ngModel)]="filterForm.cities" type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter the CITIES from where you would like to search">
+      </div>
+    </div>
+    <div class="form-check" style="padding-top: 15px;">
+      <label class="form-check-label">
+        <input [(ngModel)]="filterForm.favourite" name='favs' disabled="true" type="checkbox" class="form-check-input">
+        Bookmark as favourite
+      </label>
+    </div>
+    <button (click)="editFilter()" style="width: 250px;" type="submit" class="btn btn-primary">Edit Filters</button>
+  </form>
+</div>
